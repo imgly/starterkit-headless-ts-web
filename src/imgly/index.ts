@@ -14,7 +14,7 @@ export async function exportDesign(license: string): Promise<Blob> {
     );
     await configureDesign(engine);
     const [page] = engine.scene.getPages();
-    return await engine.block.export(page, { mimeType: 'image/png' });
+    return await engine.block.export(page!, { mimeType: 'image/png' });
   } finally {
     engine.dispose();
   }
